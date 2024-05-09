@@ -85,7 +85,7 @@ module.exports.handleForgotPassword = async (req, res) => {
       from: "kumarsuraj54057@gmail.com",
       to: email,
       subject: "Password Reset",
-      html: `<p>You requested a password reset. Click <a href="http://localhost:5000/api/v1/reset-password/${resetToken}">here</a> to reset your password.</p>`,
+      html: `<p>You requested a password reset. Click <a href="${process.env.REACT_APP_BASE_URL}/api/v1/reset-password/${resetToken}">here</a> to reset your password.</p>`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
